@@ -1,0 +1,12 @@
+.idea/
+*.log
+__pycache__
+.ipynb_checkpoints/
+*.p
+models.zip
+/model/
+/data/
+/logdir/
+/tests/
+/cysignals_crash_logs/
+NOTICE.txt
