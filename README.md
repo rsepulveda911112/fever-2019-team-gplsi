@@ -173,6 +173,11 @@ Configurations can be exported into json files. To export the current config set
 To use exported configurations, launch the pipeline with argument:
 
     PYTHONPATH=src python src/scripts/fever_gplsi/pipeline.py --config <path/to/output/json>
+
+### Docker images:
+In the docker file is the instructions for building the docker image. You only modify the line for copy the fever database.\
+RUN mkdir -p data/fever && wget -O data/fever/fever.db 'http://192.168.100.16:8080/fever.db' 
+
 ### Contacts:
 If you have any questions please contact the authors.
   * Aimée Alonso Reina aimeear1993@gmail.com 
