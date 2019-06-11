@@ -1,5 +1,5 @@
 
-## This repository was constructed by team GPLSI for the [FEVER shared task 2 ](http://fever.ai/task.html). 
+## This repository was constructed by team GPLSI for the [FEVER shared task 2](http://fever.ai/task.html). 
 
 GPLSI (Natural Language Processing and Information Systems Group) is a research group of Alicante University.
 This system has modified the Athene team system for the Fever shared task 1. Team Athene repository is https://github.com/UKPLab/fever-2018-team-athene
@@ -74,8 +74,8 @@ Construct an SQLite Database (go grab a coffee while this runs)
     PYTHONPATH=src python src/scripts/build_db.py data/wiki-pages data/fever/fever.db
 
  
-### Download the UKP-Athene models
-Download the datasets already processed through document retrieval, the pre-trained sentence selection ESIM model and the pre-trained claim verification ESIM models [here](https://public.ukp.informatik.tu-darmstadt.de/fever-2018-team-athene/). Download the files as followings:
+### Download the GPLSI models
+The pre-trained sentence selection ESIM model and the pre-trained claim verification ESIM models. Download the files as followings:
 
     download this link: https://drive.google.com/file/d/1n0nJO5hPPtLvzp8eOPxHBnQEwlSGSfsq/view?usp=sharing
     
@@ -115,7 +115,7 @@ To run the models:
 
 
 ### Description of the Config File
-The config file regarding the file paths and the hyper parameters is [src/athene/utils/config.py](https://github.com/UKPLab/fever-2018-team-athene/blob/master/src/athene/utils/config.py). The descriptions of each field are followings:
+The config file regarding the file paths and the hyper parameters is [src/athene/utils/config.py](https://github.com/rsepulveda911112/fever-2019-team-gplsi/blob/master/src/athene/utils/config.py). The descriptions of each field are followings:
 
 |Field|Description|
 |---|---|
@@ -138,7 +138,7 @@ The config file regarding the file paths and the hyper parameters is [src/athene
 |document_parallel|Whether to perform the document retrieval sub-task parallel. True or False.|
 |document_add_claim|Whether to append the original claim to the query to the MediaWiki API in the document retrieval sub-task. True or False.|
 |submission_file|Path to the final submission file.|
-|estimator_name|The name of the RTE estimator referring to [src/athene/rte/utils/estimator_definitions.py](https://github.com/UKPLab/fever-2018-team-athene/blob/master/src/athene/rte/utils/estimator_definitions.py).|
+|estimator_name|The name of the RTE estimator referring to [src/athene/rte/utils/estimator_definitions.py](https://github.com/rsepulveda911112/fever-2019-team-gplsi/blob/master/src/athene/rte/utils/estimator_definitions.py).|
 |max_sentences|The maximal number of predicted evidences for each claim.|
 |max_sentence_size|The maximal length of each predicted evidence. The words that exceed the maximal length are truncated.|
 |max_claim_size|The maximal length of each claim. The words that exceed the maximal length are truncated.|
@@ -180,4 +180,3 @@ If you have any questions please contact the authors.
  
 ### License:
   * Apache License Version 2.0 
-
