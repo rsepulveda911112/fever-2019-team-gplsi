@@ -137,8 +137,7 @@ class NullArgs:
 def main(args=NullArgs()):
     LogHelper.setup()
     logger = LogHelper.get_logger(os.path.splitext(os.path.basename(__file__))[0])
-    # For only classify
-    args.mode = Mode.PREDICT
+    #args.mode = Mode.PREDICT
     if args.config is not None:
         Config.load_config(args.config)
 
