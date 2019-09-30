@@ -53,7 +53,8 @@ def sentence_retrieval_ensemble(logger, mode: Mode = Mode.PIPELINE):
     logger.info("Starting data pre-processing...")
     tmp_file = os.path.join(Config.dataset_folder, "tmp.jsonl")
     with open(tmp_file, 'w') as wf:
-        files = [Config.training_doc_file, Config.dev_doc_file, Config.test_doc_file]
+        # Config.training_doc_file, Config.dev_doc_file,
+        files = [ Config.test_doc_file]
         for f in files:
             with open(f) as rf:
                 for line in rf:
@@ -137,7 +138,7 @@ class NullArgs:
 def main(args=NullArgs()):
     LogHelper.setup()
     logger = LogHelper.get_logger(os.path.splitext(os.path.basename(__file__))[0])
-    #args.mode = Mode.PREDICT
+    args.mode = Mode.PREDICT
     if args.config is not None:
         Config.load_config(args.config)
 

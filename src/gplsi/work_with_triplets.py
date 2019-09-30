@@ -402,31 +402,31 @@ def compare_triplets(s1,s2):
 
 
 def get_scores_based_in_triplets(claim,sentences):
-    claim_triplets= list(extract_triplets(claim))
-    result=sentences
-    mylist=[]
-    count=0
+    claim_triplets = list(extract_triplets(claim))
+    result = sentences
+    mylist = []
+    count = 0
     for s in sentences:
-        triplets=list(extract_triplets(s))
-        max_avg=0
-        max_min_partial_similarity=0
-        contradictions=0
+        triplets = list(extract_triplets(s))
+        max_avg = 0
+        max_min_partial_similarity = 0
+        contradictions = 0
         for t1 in claim_triplets:
             for t2 in triplets:
-                similarities=compare_triplets(t1,t2)
-                avg= mean([similarities[0],similarities[1],similarities[2]])
-                if similarities[4]!=similarities[7]:
-                    contradictions=-1
-                tempmin=min(similarities[0],similarities[1],similarities[2])
-                if avg>max_avg and tempmin>=max_min_partial_similarity  :
-                    max_avg=avg
-                    max_min_partial_similarity= tempmin
-        mylist.append((round(max_avg,2),round(max_min_partial_similarity,2),contradictions,count))
-        count=count+1
-    mylist.sort(key = operator.itemgetter(1, 0),reverse=True)
-    length=len(mylist)
-    for x in range (0,length):
-        result[mylist[x][3]]=length-x
+                similarities = compare_triplets(t1,t2)
+                avg = mean([similarities[0], similarities[1], similarities[2]])
+                # if similarities[4] != similarities[7]:
+                #     contradictions = -1
+                tempmin = min(similarities[0], similarities[1], similarities[2])
+                if avg > max_avg and tempmin >= max_min_partial_similarity:
+                    max_avg = avg
+                    max_min_partial_similarity = tempmin
+        mylist.append((round(max_avg, 2), round(max_min_partial_similarity, 2), contradictions, count))
+        count = count+1
+    mylist.sort(key=operator.itemgetter(1, 0), reverse=True)
+    length = len(mylist)
+    for x in range(0, length):
+        result[mylist[x][3]] = length-x
     return result
 
 

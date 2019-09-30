@@ -1,10 +1,10 @@
 {
-    "BASE_DIR": "/media/robi/LaCie/Datos Robiert/fever-2019-team-gplsi",
+    "BASE_DIR": "/media/robiert/Programación/fever-2019-team-gplsi",
     "SUBMISSION_FILE_NAME": "predictions.jsonl",
     "model_name": "esim_0",
-    "glove_path": "/media/robi/LaCie/Datos Robiert/fever-2019-team-gplsi/data/glove/glove.6B.300d.txt.gz",
-    "fasttext_path": "/media/robi/LaCie/Datos Robiert/fever-2019-team-gplsi/data/fasttext/wiki.en.bin",
-    "model_folder": "/media/robi/LaCie/Datos Robiert/fever-2019-team-gplsi/model/esim_0",
-    "ckpt_folder": "/media/robi/LaCie/Datos Robiert/fever-2019-team-gplsi/model/esim_0/rte_checkpoints",
+    "glove_path": "/media/robiert/Programación/fever-2019-team-gplsi/data/glove/glove.6B.300d.txt.gz",
+    "fasttext_path": "/media/robiert/Programación/fever-2019-team-gplsi/data/fasttext/wiki.en.bin",
+    "model_folder": "/media/robiert/Programación/fever-2019-team-gplsi/model/esim_0",
+    "ckpt_folder": "/media/robiert/Programación/fever-2019-team-gplsi/model/esim_0/rte_checkpoints",
     "relative_path_db": "data/fever/fever.db",
     "db_path": 

@@ -126,19 +126,18 @@ def post_processing(predictions, indexes, data,k=5):
     devs, location_indexes = data.extract_Data_DB(data.test_file)
     print("Processing sentences score")
     for idx, prediction in tqdm(enumerate(predictions), total=len(predictions)):
-        # line_input = np.asarray(line_input,np.str)
         scores = np.asarray(np.reshape(prediction, newshape=(-1,)))
         orders = np.argsort(scores, axis=-1)[::-1]
         scores = scores[orders]
         sents_indexes = np.asarray(indexes[idx])
-        min_k = min(k+2,len(orders))
-        preds=sents_indexes[orders][:min_k]
+        min_k = min(3*k,len(orders))
+        preds = sents_indexes[orders][:min_k]
         indexes_change = orders[:min_k]
         sentences = sentence_selector(devs[idx], indexes_change)
         with warnings.catch_warnings():
             warnings.filterwarnings("ignore")
-            triplets_score=work_with_triplets.get_scores_based_in_triplets(devs[idx][0],sentences)
-            final_score=work_with_triplets.get_final_score(preds,triplets_score)
+            triplets_score = work_with_triplets.get_scores_based_in_triplets(devs[idx][0], sentences)
+            final_score = work_with_triplets.get_final_score(preds, triplets_score)
 
         processed_predictions.append(final_score[:k])
         all_scores.append(scores[:k])
@@ -146,6 +145,7 @@ def post_processing(predictions, indexes, data,k=5):
 
 def sentence_selector(sentence_preprocessing,indexes):
     sentences=[]
+    # This is for remove claim
     sentence_preprocessing.pop(0)
     for index in indexes:
         sentences.append(sentence_preprocessing[index])
